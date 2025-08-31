@@ -1,0 +1,103 @@
+{
+  "discovery_results": [
+    {
+      "architecture_id": "improvement_390292",
+      "improvement_type": "depth_modification",
+      "current_performance": 0.65,
+      "predicted_performance": 0.9866993681643854,
+      "implementation_cost": 1.1685048412200798,
+      "confidence": 0.4982828419941214
+    },
+    {
+      "architecture_id": "improvement_416702",
+      "improvement_type": "architecture_optimization",
+      "current_performance": 0.65,
+      "predicted_performance": 0.9866958204855274,
+      "implementation_cost": 0.8489846406307953,
+      "confidence": 0.611618117832397
+    },
+    {
+      "architecture_id": "improvement_326439",
+      "improvement_type": "depth_modification",
+      "current_performance": 0.65,
+      "predicted_performance": 0.9866957212378594,
+      "implementation_cost": 1.0430535781533126,
+      "confidence": 0.513648407444977
+    },
+    {
+      "architecture_id": "improvement_164366",
+      "improvement_type": "depth_modification",
+      "current_performance": 0.65,
+      "predicted_performance": 0.9866952352510611,
+      "implementation_cost": 0.9428178903741192,
+      "confidence": 0.654187968748194
+    },
+    {
+      "architecture_id": "improvement_72360",
+      "improvement_type": "depth_modification",
+      "current_performance": 0.65,
+      "predicted_performance": 0.9866948666081347,
+      "implementation_cost": 0.8314363485671656,
+      "confidence": 0.6073288597874726
+    },
+    {
+      "architecture_id": "improvement_697560",
+      "improvement_type": "capacity_scaling",
+      "current_performance": 0.65,
+      "predicted_performance": 0.9866948616137985,
+      "implementation_cost": 0.7951584715028542,
+      "confidence": 0.5723065606602551
+    },
+    {
+      "architecture_id": "improvement_682043",
+      "improvement_type": "depth_modification",
+      "current_performance": 0.65,
+      "predicted_performance": 0.9866927595200331,
+      "implementation_cost": 0.8776533052345565,
+      "confidence": 0.45631158472749567
+    },
+    {
+      "architecture_id": "improvement_117913",
+      "improvement_type": "depth_modification",
+      "current_performance": 0.65,
+      "predicted_performance": 0.9866925478412527,
+      "implementation_cost": 1.1340052282997681,
+      "confidence": 0.5485244920343315
+    },
+    {
+      "architecture_id": "improvement_595560",
+      "improvement_type": "architecture_optimization",
+      "current_performance": 0.65,
+      "predicted_performance": 0.9866924034742124,
+      "implementation_cost": 0.5849364495933528,
+      "confidence": 0.8724969773815451
+    },
+    {
+      "architecture_id": "improvement_937314",
+      "improvement_type": "capacity_scaling",
+      "current_performance": 0.65,
+      "predicted_performance": 0.986691932644121,
+      "implementation_cost": 0.9627282526043123,
+      "confidence": 0.4841039383830469
+    }
+  ],
+  "final_status": {
+    "current_architecture": {
+      "layers": 4,
+      "parameters": 8000,
+      "accuracy": 0.65,
+      "efficiency": 100.0
+    },
+    "total_improvements_applied": 0,
+    "improvement_history": [],
+    "performance_trend": {
+      "trend": 0.0,
+      "total_gain": 0.0
+    },
+    "system_evolution": [
+      "No improvements applied yet"
+    ]
+  },
+  "discovery_time": 142.47770357131958,
+  "timestamp": 1755987872.0505269
+}

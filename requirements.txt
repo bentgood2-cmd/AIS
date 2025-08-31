@@ -1,0 +1,40 @@
+# Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart>=0.0.7
+
+# Data Processing
+numpy==1.24.3
+pandas==2.0.3
+
+# Machine Learning
+torch==2.1.0
+transformers==4.35.2
+scikit-learn>=1.5.0
+
+# System Monitoring
+psutil==5.9.6
+
+# Development Tools
+pytest==7.4.3
+black==23.9.1
+flake8==6.1.0
+
+# GUI (Optional)
+PyQt6==6.6.0
+
+# Async Support
+asyncio-mqtt==0.13.0
+
+# Logging and Configuration
+pydantic==2.5.0
+python-dotenv==1.0.0
+
+# HTTP Client
+httpx==0.25.2
+
+# Data Validation
+marshmallow==3.20.1
+
+# Utilities
+python-dateutil==2.8.2

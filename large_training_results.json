@@ -1,0 +1,612 @@
+{
+  "dataset": "MMLU Knowledge (12k)",
+  "iterations": 25000,
+  "dataset_size": 10926,
+  "best_accuracy": 0.968677522216207,
+  "final_accuracy": 0.9639284012622694,
+  "final_loss": -0.04613223976611185,
+  "learning_history": [
+    {
+      "iteration": 24901,
+      "accuracy": 0.9350117742148831,
+      "loss": -0.028716215449943717,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24902,
+      "accuracy": 0.9568503188680029,
+      "loss": 0.05208516539015279,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24903,
+      "accuracy": 0.9485989756402063,
+      "loss": -0.04110337848778183,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24904,
+      "accuracy": 0.9594658770382442,
+      "loss": 0.08194291802037376,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24905,
+      "accuracy": 0.9331009924979022,
+      "loss": 0.042712720997683806,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24906,
+      "accuracy": 0.9316347164339621,
+      "loss": -0.07497132250531567,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24907,
+      "accuracy": 0.927017073006759,
+      "loss": 0.0649593359467115,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24908,
+      "accuracy": 0.9525745944019142,
+      "loss": -0.023898245111033,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24909,
+      "accuracy": 0.944718949033068,
+      "loss": 0.11007201667326028,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24910,
+      "accuracy": 0.9486885682519041,
+      "loss": 0.08507424642228245,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24911,
+      "accuracy": 0.9469511561085532,
+      "loss": -0.023869429423232807,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24912,
+      "accuracy": 0.9492967795635985,
+      "loss": -0.06363782457386152,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24913,
+      "accuracy": 0.9353079824243529,
+      "loss": 0.0641818676314592,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24914,
+      "accuracy": 0.9560961677520581,
+      "loss": -0.04587116506631481,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24915,
+      "accuracy": 0.9461558995969143,
+      "loss": 0.051472611765736226,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24916,
+      "accuracy": 0.9593399871740335,
+      "loss": 0.006870905873055874,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24917,
+      "accuracy": 0.9624618602014432,
+      "loss": -0.030762137200419273,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24918,
+      "accuracy": 0.9476697996821087,
+      "loss": 0.012565712476913668,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24919,
+      "accuracy": 0.9582612417766916,
+      "loss": 0.09035061726577961,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24920,
+      "accuracy": 0.9342485478234741,
+      "loss": -0.008153603351227418,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24921,
+      "accuracy": 0.954536045698982,
+      "loss": 0.03468793370863979,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24922,
+      "accuracy": 0.9463811373062696,
+      "loss": 0.07896135138228685,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24923,
+      "accuracy": 0.9422856007916863,
+      "loss": -0.006331817037863535,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24924,
+      "accuracy": 0.9619747658270336,
+      "loss": 0.01949593559318294,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24925,
+      "accuracy": 0.9622836316746753,
+      "loss": -0.006572871159137267,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24926,
+      "accuracy": 0.941767333949232,
+      "loss": -0.06795312970548305,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24927,
+      "accuracy": 0.9642617704962694,
+      "loss": -0.044269469488029484,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24928,
+      "accuracy": 0.9456094851853311,
+      "loss": 0.07347123305998424,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24929,
+      "accuracy": 0.9661705555398096,
+      "loss": 0.020667684443230055,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24930,
+      "accuracy": 0.9672290575522983,
+      "loss": -0.021052191119728295,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24931,
+      "accuracy": 0.9599349666082023,
+      "loss": 0.03291142620784886,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24932,
+      "accuracy": 0.961786225270278,
+      "loss": 0.09289271601841081,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24933,
+      "accuracy": 0.947231727782873,
+      "loss": -0.0008964576895295062,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24934,
+      "accuracy": 0.9352830452415574,
+      "loss": -0.07857200297352483,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24935,
+      "accuracy": 0.9319154932212286,
+      "loss": -0.06333013647707919,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24936,
+      "accuracy": 0.9510062295784438,
+      "loss": -0.01479406845176763,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24937,
+      "accuracy": 0.9292388459647495,
+      "loss": 0.09287086329556213,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24938,
+      "accuracy": 0.9400694982758241,
+      "loss": -0.01760504862959976,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24939,
+      "accuracy": 0.966287900730896,
+      "loss": 0.04366203812961861,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24940,
+      "accuracy": 0.9420824238279754,
+      "loss": -0.005938067096520255,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24941,
+      "accuracy": 0.9510617821078808,
+      "loss": 0.016280608002854885,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24942,
+      "accuracy": 0.9429044229028414,
+      "loss": -0.02970284697139805,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24943,
+      "accuracy": 0.9607445282515452,
+      "loss": 0.06013544254878625,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24944,
+      "accuracy": 0.9476034632699246,
+      "loss": 0.08229483471315782,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24945,
+      "accuracy": 0.9381290606176342,
+      "loss": -0.0024818931544282608,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24946,
+      "accuracy": 0.93595887507657,
+      "loss": -0.04124663164397118,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24947,
+      "accuracy": 0.9312519064273143,
+      "loss": 0.06704767961060493,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24948,
+      "accuracy": 0.9575735939216069,
+      "loss": 0.08654871676181003,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24949,
+      "accuracy": 0.9318341321865106,
+      "loss": 0.09395334378747863,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24950,
+      "accuracy": 0.9327489746601341,
+      "loss": 0.09202762594134875,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24951,
+      "accuracy": 0.9443944609276448,
+      "loss": 0.03180567505449877,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24952,
+      "accuracy": 0.9636275105076397,
+      "loss": 0.04073698993872407,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24953,
+      "accuracy": 0.9292446810076176,
+      "loss": -0.07802425478717429,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24954,
+      "accuracy": 0.9312300628045278,
+      "loss": 0.05334571602571608,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24955,
+      "accuracy": 0.9374623273137047,
+      "loss": -0.08864068669091613,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24956,
+      "accuracy": 0.9435914595187395,
+      "loss": 0.03876653111105263,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24957,
+      "accuracy": 0.9637028020959394,
+      "loss": 0.045784074039322525,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24958,
+      "accuracy": 0.9341741021585231,
+      "loss": -0.06938023368356508,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24959,
+      "accuracy": 0.9496067694724101,
+      "loss": -0.015301226773542356,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24960,
+      "accuracy": 0.9451382253704642,
+      "loss": 0.08247724241422213,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24961,
+      "accuracy": 0.9505634415825471,
+      "loss": 0.061173938287074264,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24962,
+      "accuracy": 0.9571613337972527,
+      "loss": 0.08986497346288677,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24963,
+      "accuracy": 0.9415992919686644,
+      "loss": 0.000526767439047296,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24964,
+      "accuracy": 0.9587625219628241,
+      "loss": 0.07020956748423876,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24965,
+      "accuracy": 0.9414647212085251,
+      "loss": 0.045528240842351075,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24966,
+      "accuracy": 0.9673995242965593,
+      "loss": 0.040178143682815304,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24967,
+      "accuracy": 0.9426958317840222,
+      "loss": -0.04234987076526495,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24968,
+      "accuracy": 0.9381025569991226,
+      "loss": -0.016933615118905856,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24969,
+      "accuracy": 0.9331894569930104,
+      "loss": -0.03750813425645405,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24970,
+      "accuracy": 0.9565872653700093,
+      "loss": 0.10169730328983248,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24971,
+      "accuracy": 0.9637587279174405,
+      "loss": -0.029193474685441603,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24972,
+      "accuracy": 0.9448568629605558,
+      "loss": -0.047769477490515834,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24973,
+      "accuracy": 0.9487951032302441,
+      "loss": 0.060877997876243595,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24974,
+      "accuracy": 0.968677522216207,
+      "loss": -0.0864313810528966,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24975,
+      "accuracy": 0.9503119759428583,
+      "loss": -0.015924067118475493,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24976,
+      "accuracy": 0.9596934054470281,
+      "loss": -0.0582908028196506,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24977,
+      "accuracy": 0.9489529860611967,
+      "loss": -0.0377980936831569,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24978,
+      "accuracy": 0.9382765136422243,
+      "loss": -0.08179097317838853,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24979,
+      "accuracy": 0.9675369421989836,
+      "loss": 0.042144830960859025,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24980,
+      "accuracy": 0.9538990048694855,
+      "loss": -0.06752138043249722,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24981,
+      "accuracy": 0.9538536329747493,
+      "loss": -0.09244880381084974,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24982,
+      "accuracy": 0.939405760490536,
+      "loss": -0.08051096541629062,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24983,
+      "accuracy": 0.9429209296418561,
+      "loss": -0.09484145772865374,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24984,
+      "accuracy": 0.9381124422562025,
+      "loss": -0.040030298074278096,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24985,
+      "accuracy": 0.9463766858984428,
+      "loss": -0.0014991458740239993,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24986,
+      "accuracy": 0.9676713780300961,
+      "loss": -0.0733923233701328,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24987,
+      "accuracy": 0.9444477926788544,
+      "loss": 0.0484984730730639,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24988,
+      "accuracy": 0.9575628806560516,
+      "loss": 0.014075835791732133,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24989,
+      "accuracy": 0.9597357762994427,
+      "loss": -0.03944213891337949,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24990,
+      "accuracy": 0.9379052649208731,
+      "loss": 0.07459188104414544,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24991,
+      "accuracy": 0.9597960312165945,
+      "loss": 0.039599041734205226,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24992,
+      "accuracy": 0.9685788037558585,
+      "loss": -0.02125137498635818,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24993,
+      "accuracy": 0.9657010544869474,
+      "loss": -0.09033573949919974,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24994,
+      "accuracy": 0.9568791932802574,
+      "loss": -0.03346364697211626,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24995,
+      "accuracy": 0.9607478349574835,
+      "loss": -0.03215697002306035,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24996,
+      "accuracy": 0.9463932995465032,
+      "loss": -0.056766004665308345,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24997,
+      "accuracy": 0.9496151907601119,
+      "loss": -0.031354213948720955,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24998,
+      "accuracy": 0.9567553953456607,
+      "loss": -0.09609137289474218,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 24999,
+      "accuracy": 0.9483515815060013,
+      "loss": 0.020108160427865646,
+      "dataset_samples": 10926
+    },
+    {
+      "iteration": 25000,
+      "accuracy": 0.9639284012622694,
+      "loss": -0.04613223976611185,
+      "dataset_samples": 10926
+    }
+  ],
+  "training_time": 4.0715038776397705,
+  "timestamp": 1755989904.3712869
+}

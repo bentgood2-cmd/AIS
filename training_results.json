@@ -1,0 +1,7 @@
+{
+  "dataset": "MMLU Knowledge",
+  "final_accuracy": 1.008136959831183,
+  "final_loss": 0.40233904982244634,
+  "epochs": 5,
+  "timestamp": 1755984771.2164602
+}

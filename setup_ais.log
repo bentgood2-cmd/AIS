@@ -1,0 +1,300 @@
+2025-08-23 08:32:33,161 - INFO - Starting AIS v3.2.1 setup in C:\Users\bentg\OneDrive\Desktop\AIS_Project
+2025-08-23 08:32:33,164 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core
+2025-08-23 08:32:33,165 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api
+2025-08-23 08:32:33,166 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes
+2025-08-23 08:32:33,166 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils
+2025-08-23 08:32:33,167 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager
+2025-08-23 08:32:33,168 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config
+2025-08-23 08:32:33,169 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker
+2025-08-23 08:32:33,169 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx
+2025-08-23 08:32:33,170 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes
+2025-08-23 08:32:33,171 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\api
+2025-08-23 08:32:33,172 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\services
+2025-08-23 08:32:33,173 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\stores
+2025-08-23 08:32:33,173 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\hooks
+2025-08-23 08:32:33,174 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\components
+2025-08-23 08:32:33,175 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\pages
+2025-08-23 08:32:33,175 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\checkpoints
+2025-08-23 08:32:33,176 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests
+2025-08-23 08:32:33,178 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\install_ais.py
+2025-08-23 08:32:33,180 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\__init__.py
+2025-08-23 08:32:33,181 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core\__init__.py
+2025-08-23 08:32:33,183 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\requirements.txt
+2025-08-23 08:32:33,185 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\settings.py
+2025-08-23 08:32:33,186 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\Dockerfile
+2025-08-23 08:32:33,188 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes\deployment.yaml
+2025-08-23 08:32:33,190 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests\test_ais.py
+2025-08-23 08:32:33,190 - INFO - Installing dependencies...
+2025-08-23 08:32:34,633 - INFO - Dependencies installed successfully
+2025-08-23 08:32:34,633 - INFO - AIS v3.2.1 setup completed successfully
+2025-08-23 08:32:50,613 - INFO - Starting AIS v3.2.1 setup in C:\Users\bentg\OneDrive\Desktop\AIS_Project
+2025-08-23 08:32:50,621 - INFO - Cleaned up previous AIS installation
+2025-08-23 08:32:50,622 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core
+2025-08-23 08:32:50,623 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api
+2025-08-23 08:32:50,624 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes
+2025-08-23 08:32:50,624 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils
+2025-08-23 08:32:50,626 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager
+2025-08-23 08:32:50,627 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config
+2025-08-23 08:32:50,627 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker
+2025-08-23 08:32:50,628 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx
+2025-08-23 08:32:50,629 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes
+2025-08-23 08:32:50,630 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\api
+2025-08-23 08:32:50,630 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\services
+2025-08-23 08:32:50,631 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\stores
+2025-08-23 08:32:50,631 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\hooks
+2025-08-23 08:32:50,631 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\components
+2025-08-23 08:32:50,632 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\pages
+2025-08-23 08:32:50,632 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\checkpoints
+2025-08-23 08:32:50,633 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests
+2025-08-23 08:32:50,634 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\install_ais.py
+2025-08-23 08:32:50,635 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\__init__.py
+2025-08-23 08:32:50,637 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core\__init__.py
+2025-08-23 08:32:50,638 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\requirements.txt
+2025-08-23 08:32:50,640 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\settings.py
+2025-08-23 08:32:50,641 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\Dockerfile
+2025-08-23 08:32:50,643 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes\deployment.yaml
+2025-08-23 08:32:50,646 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests\test_ais.py
+2025-08-23 08:32:50,647 - INFO - Installing dependencies...
+2025-08-23 08:32:52,104 - INFO - Dependencies installed successfully
+2025-08-23 08:32:52,104 - INFO - AIS v3.2.1 setup completed successfully
+2025-08-23 08:55:59,284 - INFO - Starting AIS v3.2.1 setup in C:\Users\bentg\OneDrive\Desktop\AIS_Project
+2025-08-23 08:55:59,286 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core
+2025-08-23 08:55:59,287 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api
+2025-08-23 08:55:59,288 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes
+2025-08-23 08:55:59,289 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils
+2025-08-23 08:55:59,289 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager
+2025-08-23 08:55:59,290 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config
+2025-08-23 08:55:59,291 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker
+2025-08-23 08:55:59,291 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx
+2025-08-23 08:55:59,292 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes
+2025-08-23 08:55:59,294 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\api
+2025-08-23 08:55:59,296 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\services
+2025-08-23 08:55:59,296 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\stores
+2025-08-23 08:55:59,297 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\hooks
+2025-08-23 08:55:59,298 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\components
+2025-08-23 08:55:59,299 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\pages
+2025-08-23 08:55:59,301 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\checkpoints
+2025-08-23 08:55:59,302 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests
+2025-08-23 08:55:59,306 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\install_ais.py
+2025-08-23 08:55:59,309 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\__init__.py
+2025-08-23 08:55:59,311 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core\__init__.py
+2025-08-23 08:55:59,313 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\requirements.txt
+2025-08-23 08:55:59,315 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\settings.py
+2025-08-23 08:55:59,317 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\Dockerfile
+2025-08-23 08:55:59,319 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes\deployment.yaml
+2025-08-23 08:55:59,321 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests\test_ais.py
+2025-08-23 08:55:59,321 - INFO - Installing dependencies...
+2025-08-23 08:55:59,425 - ERROR - Dependency installation failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 08:55:59,426 - ERROR - STDERR: C:\Users\bentg\AppData\Local\Programs\Python\Python313\python.exe: No module named pip
+
+2025-08-23 08:55:59,426 - ERROR - Setup failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 08:55:59,426 - ERROR - Setup failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 09:54:02,086 - INFO - Starting AIS v3.2.1 setup in C:\Users\bentg\OneDrive\Desktop\AIS_Project
+2025-08-23 09:54:02,088 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core
+2025-08-23 09:54:02,089 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api
+2025-08-23 09:54:02,089 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes
+2025-08-23 09:54:02,090 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils
+2025-08-23 09:54:02,090 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager
+2025-08-23 09:54:02,091 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config
+2025-08-23 09:54:02,092 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker
+2025-08-23 09:54:02,092 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx
+2025-08-23 09:54:02,093 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes
+2025-08-23 09:54:02,094 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\api
+2025-08-23 09:54:02,094 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\services
+2025-08-23 09:54:02,095 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\stores
+2025-08-23 09:54:02,096 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\hooks
+2025-08-23 09:54:02,096 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\components
+2025-08-23 09:54:02,097 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\pages
+2025-08-23 09:54:02,106 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\checkpoints
+2025-08-23 09:54:02,107 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests
+2025-08-23 09:54:02,109 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\install_ais.py
+2025-08-23 09:54:02,111 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\__init__.py
+2025-08-23 09:54:02,113 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core\__init__.py
+2025-08-23 09:54:02,116 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\requirements.txt
+2025-08-23 09:54:02,118 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\settings.py
+2025-08-23 09:54:02,121 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\Dockerfile
+2025-08-23 09:54:02,122 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes\deployment.yaml
+2025-08-23 09:54:02,124 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests\test_ais.py
+2025-08-23 09:54:02,125 - INFO - Installing dependencies...
+2025-08-23 09:54:02,214 - ERROR - Dependency installation failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 09:54:02,214 - ERROR - STDERR: C:\Users\bentg\AppData\Local\Programs\Python\Python313\python.exe: No module named pip
+
+2025-08-23 09:54:02,214 - ERROR - Setup failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 09:54:02,214 - ERROR - Setup failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 10:03:31,609 - INFO - Starting AIS v3.2.1 setup in C:\Users\bentg\OneDrive\Desktop\AIS_Project
+2025-08-23 10:03:31,618 - INFO - Cleaned up previous AIS installation
+2025-08-23 10:03:31,620 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core
+2025-08-23 10:03:31,620 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api
+2025-08-23 10:03:31,620 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes
+2025-08-23 10:03:31,621 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils
+2025-08-23 10:03:31,621 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager
+2025-08-23 10:03:31,622 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config
+2025-08-23 10:03:31,622 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker
+2025-08-23 10:03:31,623 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx
+2025-08-23 10:03:31,623 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes
+2025-08-23 10:03:31,623 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\api
+2025-08-23 10:03:31,624 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\services
+2025-08-23 10:03:31,625 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\stores
+2025-08-23 10:03:31,626 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\hooks
+2025-08-23 10:03:31,627 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\components
+2025-08-23 10:03:31,627 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\pages
+2025-08-23 10:03:31,627 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\checkpoints
+2025-08-23 10:03:31,628 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests
+2025-08-23 10:03:31,630 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\install_ais.py
+2025-08-23 10:03:31,631 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\__init__.py
+2025-08-23 10:03:31,632 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core\__init__.py
+2025-08-23 10:03:31,634 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\requirements.txt
+2025-08-23 10:03:31,636 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\settings.py
+2025-08-23 10:03:31,637 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\Dockerfile
+2025-08-23 10:03:31,639 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes\deployment.yaml
+2025-08-23 10:03:31,640 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests\test_ais.py
+2025-08-23 10:03:31,640 - INFO - Installing dependencies...
+2025-08-23 10:03:31,862 - ERROR - Dependency installation failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 10:03:31,862 - ERROR - STDERR: C:\Users\bentg\AppData\Local\Programs\Python\Python313\python.exe: No module named pip
+
+2025-08-23 10:03:31,862 - ERROR - Setup failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 10:03:31,862 - ERROR - Setup failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 10:20:00,725 - INFO - Starting AIS v3.2.1 setup in C:\Users\bentg\OneDrive\Desktop\AIS_Project
+2025-08-23 10:20:00,736 - INFO - Cleaned up previous AIS installation
+2025-08-23 10:20:00,737 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core
+2025-08-23 10:20:00,739 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api
+2025-08-23 10:20:00,740 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes
+2025-08-23 10:20:00,742 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils
+2025-08-23 10:20:00,742 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager
+2025-08-23 10:20:00,743 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config
+2025-08-23 10:20:00,743 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker
+2025-08-23 10:20:00,744 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx
+2025-08-23 10:20:00,745 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes
+2025-08-23 10:20:00,745 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\api
+2025-08-23 10:20:00,746 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\services
+2025-08-23 10:20:00,746 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\stores
+2025-08-23 10:20:00,747 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\hooks
+2025-08-23 10:20:00,747 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\components
+2025-08-23 10:20:00,747 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\pages
+2025-08-23 10:20:00,748 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\checkpoints
+2025-08-23 10:20:00,748 - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests
+2025-08-23 10:20:00,752 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\install_ais.py
+2025-08-23 10:20:00,754 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\__init__.py
+2025-08-23 10:20:00,757 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core\__init__.py
+2025-08-23 10:20:00,759 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\requirements.txt
+2025-08-23 10:20:00,760 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\settings.py
+2025-08-23 10:20:00,763 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\Dockerfile
+2025-08-23 10:20:00,764 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes\deployment.yaml
+2025-08-23 10:20:00,765 - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests\test_ais.py
+2025-08-23 10:20:00,766 - INFO - Installing dependencies...
+2025-08-23 10:20:00,990 - ERROR - Dependency installation failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 10:20:00,990 - ERROR - STDERR: C:\Users\bentg\AppData\Local\Programs\Python\Python313\python.exe: No module named pip
+
+2025-08-23 10:20:00,990 - ERROR - Setup failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 10:20:00,991 - ERROR - Setup failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 11:31:36,261 - __main__ - INFO - Starting AIS v3.2.1 setup in C:\Users\bentg\OneDrive\Desktop\AIS_Project
+2025-08-23 11:31:36,309 - __main__ - INFO - Cleaned up previous AIS installation
+2025-08-23 11:31:36,491 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais
+2025-08-23 11:31:36,492 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core
+2025-08-23 11:31:36,494 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api
+2025-08-23 11:31:36,500 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes
+2025-08-23 11:31:36,674 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils
+2025-08-23 11:31:36,676 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager
+2025-08-23 11:31:36,677 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config
+2025-08-23 11:31:36,678 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker
+2025-08-23 11:31:36,679 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx
+2025-08-23 11:31:36,681 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes
+2025-08-23 11:31:36,682 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src
+2025-08-23 11:31:36,683 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\api
+2025-08-23 11:31:36,684 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\services
+2025-08-23 11:31:36,684 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\stores
+2025-08-23 11:31:36,685 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\hooks
+2025-08-23 11:31:36,685 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\components
+2025-08-23 11:31:36,686 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\pages
+2025-08-23 11:31:36,687 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\checkpoints
+2025-08-23 11:31:36,689 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests
+2025-08-23 11:31:36,861 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\__init__.py
+2025-08-23 11:31:36,865 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core\__init__.py
+2025-08-23 11:31:36,869 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\__init__.py
+2025-08-23 11:31:36,872 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes\__init__.py
+2025-08-23 11:31:36,875 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils\__init__.py
+2025-08-23 11:31:36,877 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager\__init__.py
+2025-08-23 11:31:36,882 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\__init__.py
+2025-08-23 11:31:36,884 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests\__init__.py
+2025-08-23 11:31:37,280 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\settings.py
+2025-08-23 11:31:37,283 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\Dockerfile
+2025-08-23 11:31:37,285 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx\nginx.conf
+2025-08-23 11:31:37,287 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes\deployment.yaml
+2025-08-23 11:31:37,289 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\.gitignore
+2025-08-23 11:31:37,290 - __main__ - INFO - Installing dependencies...
+2025-08-23 11:31:38,641 - __main__ - ERROR - Dependency installation failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 11:31:38,641 - __main__ - ERROR - STDERR: C:\Users\bentg\AppData\Local\Programs\Python\Python313\python.exe: No module named pip
+
+2025-08-23 11:31:38,642 - __main__ - ERROR - Dependency installation failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 11:31:38,642 - __main__ - ERROR - Setup failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 11:31:38,642 - __main__ - ERROR - Setup failed: Command '['C:\\Users\\bentg\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', '-m', 'pip', 'install', '-r', 'C:\\Users\\bentg\\OneDrive\\Desktop\\AIS_Project\\requirements.txt']' returned non-zero exit status 1.
+2025-08-23 12:41:55,124 - __main__ - INFO - Starting AIS v3.2.1 setup in C:\Users\bentg\OneDrive\Desktop\AIS_Project
+2025-08-23 12:41:55,147 - __main__ - INFO - Cleaned up previous AIS installation
+2025-08-23 12:41:55,154 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais
+2025-08-23 12:41:55,154 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core
+2025-08-23 12:41:55,156 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api
+2025-08-23 12:41:55,157 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes
+2025-08-23 12:41:55,157 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils
+2025-08-23 12:41:55,158 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager
+2025-08-23 12:41:55,158 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config
+2025-08-23 12:41:55,159 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker
+2025-08-23 12:41:55,159 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx
+2025-08-23 12:41:55,160 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes
+2025-08-23 12:41:55,160 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src
+2025-08-23 12:41:55,161 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\api
+2025-08-23 12:41:55,162 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\services
+2025-08-23 12:41:55,163 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\stores
+2025-08-23 12:41:55,163 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\hooks
+2025-08-23 12:41:55,164 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\components
+2025-08-23 12:41:55,164 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\pages
+2025-08-23 12:41:55,165 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\checkpoints
+2025-08-23 12:41:55,165 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests
+2025-08-23 12:41:55,166 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\__init__.py
+2025-08-23 12:41:55,168 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core\__init__.py
+2025-08-23 12:41:55,169 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\__init__.py
+2025-08-23 12:41:55,171 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes\__init__.py
+2025-08-23 12:41:55,175 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils\__init__.py
+2025-08-23 12:41:55,176 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager\__init__.py
+2025-08-23 12:41:55,178 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\__init__.py
+2025-08-23 12:41:55,180 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests\__init__.py
+2025-08-23 12:41:55,185 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\settings.py
+2025-08-23 12:41:55,187 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\Dockerfile
+2025-08-23 12:41:55,188 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx\nginx.conf
+2025-08-23 12:41:55,197 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes\deployment.yaml
+2025-08-23 12:41:55,212 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\.gitignore
+2025-08-23 12:41:55,213 - __main__ - INFO - Installing dependencies...
+2025-08-23 14:23:40,654 - __main__ - INFO - Starting AIS v3.2.1 setup in C:\Users\bentg\OneDrive\Desktop\AIS_Project
+2025-08-23 14:23:40,677 - __main__ - INFO - Cleaned up previous AIS installation
+2025-08-23 14:23:40,684 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais
+2025-08-23 14:23:40,685 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core
+2025-08-23 14:23:40,687 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api
+2025-08-23 14:23:40,688 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes
+2025-08-23 14:23:40,689 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils
+2025-08-23 14:23:40,690 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager
+2025-08-23 14:23:40,690 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config
+2025-08-23 14:23:40,691 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker
+2025-08-23 14:23:40,692 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx
+2025-08-23 14:23:40,692 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes
+2025-08-23 14:23:40,692 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src
+2025-08-23 14:23:40,693 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\api
+2025-08-23 14:23:40,693 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\services
+2025-08-23 14:23:40,694 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\stores
+2025-08-23 14:23:40,695 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\hooks
+2025-08-23 14:23:40,695 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\components
+2025-08-23 14:23:40,696 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\src\pages
+2025-08-23 14:23:40,697 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\checkpoints
+2025-08-23 14:23:40,697 - __main__ - INFO - Created directory: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests
+2025-08-23 14:23:40,700 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\__init__.py
+2025-08-23 14:23:40,702 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\core\__init__.py
+2025-08-23 14:23:40,705 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\__init__.py
+2025-08-23 14:23:40,706 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\api\routes\__init__.py
+2025-08-23 14:23:40,708 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\utils\__init__.py
+2025-08-23 14:23:40,711 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\ais\data_manager\__init__.py
+2025-08-23 14:23:40,713 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\__init__.py
+2025-08-23 14:23:40,716 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\tests\__init__.py
+2025-08-23 14:23:40,717 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\config\settings.py
+2025-08-23 14:23:40,724 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\Dockerfile
+2025-08-23 14:23:40,725 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\docker\nginx\nginx.conf
+2025-08-23 14:23:40,727 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\kubernetes\deployment.yaml
+2025-08-23 14:23:40,734 - __main__ - INFO - Created file: C:\Users\bentg\OneDrive\Desktop\AIS_Project\.gitignore
+2025-08-23 14:23:40,735 - __main__ - INFO - Installing dependencies...
