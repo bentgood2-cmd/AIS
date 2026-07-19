@@ -1,0 +1,21 @@
+{
+  "n_sentences": 30,
+  "watermark": {
+    "true_positive_rate": 0.03333333333333333,
+    "false_positive_rate_unwatermarked_text": 0.03333333333333333,
+    "false_positive_rate_wrong_key": 0.1,
+    "detection_survival_after_1_word_edit": 0.03333333333333333,
+    "mean_semantic_cosine_to_original": 0.9985206623872122,
+    "mean_fluency_delta_per_token": -0.01822037419713087,
+    "mean_substitutions_per_sentence": 1.2
+  },
+  "persona": {
+    "original_trajectory_roughness": 25.702056884765625,
+    "empathetic_target_roughness": 21.65099281947289,
+    "urgent_target_roughness": 36.45317656405786,
+    "empathetic_realized_roughness_after_discretization": 25.526312096913657,
+    "urgent_realized_roughness_after_discretization": 25.67494691212972,
+    "empathetic_semantic_cosine_to_original": 0.9986508389314016,
+    "urgent_semantic_cosine_to_original": 0.9970929880936941
+  }
+}
