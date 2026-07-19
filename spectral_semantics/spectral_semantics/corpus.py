@@ -67,3 +67,32 @@ def eval_sentences(n: int = 40, min_len: int = 7, max_len: int = 14) -> list[lis
         if len(out) >= n:
             break
     return out
+
+
+@lru_cache(maxsize=1)
+def eval_paragraphs(n: int = 8, min_words: int = 100, max_words: int = 200) -> list[list[str]]:
+    """Paragraph-length token sequences (100-200 words), built by
+    concatenating consecutive Gutenberg sentences until the target length is
+    reached. Used to test whether watermarking/persona-modulation failures
+    at the single-sentence scale are a statistical-power / substitution-
+    budget problem that more text simply fixes, as opposed to a deeper
+    limitation of the decoding approach.
+    """
+    from nltk.corpus import gutenberg
+
+    out: list[list[str]] = []
+    buffer: list[str] = []
+    for s in gutenberg.sents("austen-emma.txt"):
+        cleaned = _clean_tokens(s)
+        if not cleaned:
+            continue
+        buffer.extend(cleaned)
+        if len(buffer) >= min_words:
+            if len(buffer) <= max_words:
+                out.append(buffer)
+            else:
+                out.append(buffer[:max_words])
+            buffer = []
+            if len(out) >= n:
+                break
+    return out

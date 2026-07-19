@@ -42,12 +42,18 @@ def _wn_pos(tag: str) -> str | None:
     return _PENN_TO_WN.get(tag[0]) if tag[:2] in _CONTENT_TAGS else None
 
 
-def content_positions(tokens: list[str]) -> list[int]:
-    tagged = nltk.pos_tag(tokens)
-    return [i for i, (_, tag) in enumerate(tagged) if tag[:2] in _CONTENT_TAGS]
+def content_positions(tokens: list[str], tags: list[tuple[str, str]] | None = None) -> list[int]:
+    tags = tags if tags is not None else nltk.pos_tag(tokens)
+    return [i for i, (_, tag) in enumerate(tags) if tag[:2] in _CONTENT_TAGS]
 
 
-def synonym_candidates(tokens: list[str], position: int, embedder: Embedder, max_candidates: int = 6) -> list[str]:
+def synonym_candidates(
+    tokens: list[str],
+    position: int,
+    embedder: Embedder,
+    max_candidates: int = 6,
+    tags: list[tuple[str, str]] | None = None,
+) -> list[str]:
     """Candidate substitutions for tokens[position], always including the
     original word first (so guided_rewrite's search can never be forced
     away from a no-op at this position), followed by WordNet synonyms
@@ -62,7 +68,8 @@ def synonym_candidates(tokens: list[str], position: int, embedder: Embedder, max
     (see tests/test_rewrite.py::test_synonym_candidates_deterministic).
     """
     word = tokens[position]
-    tag = nltk.pos_tag(tokens)[position][1]
+    tags = tags if tags is not None else nltk.pos_tag(tokens)
+    tag = tags[position][1]
     pos = _wn_pos(tag)
     if pos is None:
         return [word]
@@ -127,8 +134,12 @@ def guided_rewrite(
 
     baseline_fluency = lm.sentence_logprob_per_token(tokens)
 
-    positions = content_positions(tokens)
-    candidate_lists = {p: synonym_candidates(tokens, p, embedder) for p in positions}
+    # Tag once and reuse: synonym_candidates used to re-run nltk.pos_tag on the
+    # full token list for every position, which is quadratic in sequence
+    # length. Fine for a 10-word sentence, not for a 150-word paragraph.
+    tags = nltk.pos_tag(tokens)
+    positions = content_positions(tokens, tags=tags)
+    candidate_lists = {p: synonym_candidates(tokens, p, embedder, tags=tags) for p in positions}
 
     def score(cand_tokens: list[str]) -> float:
         dist = float(np.sum((_band_magnitude(embedder, cand_tokens, band) - target_band_mag) ** 2))

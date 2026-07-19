@@ -1,5 +1,6 @@
 [
   {
+    "length_tokens": 8,
     "original": "between it was more the intimacy of sisters",
     "watermarked": "between it was more the liaison of sister",
     "num_substitutions": 2,
@@ -11,6 +12,7 @@
     "p_correct_key_on_edited": 0.5514950166112956
   },
   {
+    "length_tokens": 10,
     "original": "it was miss taylor s loss which first brought grief",
     "watermarked": "it was miss taylor entropy loss which first brought grief",
     "num_substitutions": 1,
@@ -22,6 +24,7 @@
     "p_correct_key_on_edited": 0.40863787375415284
   },
   {
+    "length_tokens": 10,
     "original": "the event had every promise of happiness for her friend",
     "watermarked": "the effect had every promise of felicity for her friend",
     "num_substitutions": 2,
@@ -33,6 +36,7 @@
     "p_correct_key_on_edited": 0.5548172757475083
   },
   {
+    "length_tokens": 13,
     "original": "the want of miss taylor would be felt every hour of every day",
     "watermarked": "the need of miss taylor would be find every minute of every day",
     "num_substitutions": 3,
@@ -44,6 +48,7 @@
     "p_correct_key_on_edited": 0.3588039867109635
   },
   {
+    "length_tokens": 12,
     "original": "she dearly loved her father but he was no companion for her",
     "watermarked": "she dearly bang her founder but he was no familiar for her",
     "num_substitutions": 3,
@@ -55,6 +60,7 @@
     "p_correct_key_on_edited": 0.07973421926910298
   },
   {
+    "length_tokens": 10,
     "original": "he could not meet her in conversation rational or playful",
     "watermarked": "he could not meet her in conversation rational or playful",
     "num_substitutions": 0,
@@ -66,6 +72,7 @@
     "p_correct_key_on_edited": 0.9634551495016611
   },
   {
+    "length_tokens": 7,
     "original": "the woodhouses were first in consequence there",
     "watermarked": "the woodhouses were first in import there",
     "num_substitutions": 1,
@@ -77,6 +84,7 @@
     "p_correct_key_on_edited": 1.0
   },
   {
+    "length_tokens": 9,
     "original": "poor miss taylor i wish she were here again",
     "watermarked": "short miss taylor i wish she were here again",
     "num_substitutions": 1,
@@ -88,6 +96,7 @@
     "p_correct_key_on_edited": 0.42524916943521596
   },
   {
+    "length_tokens": 12,
     "original": "what a pity it is that mr weston ever thought of her",
     "watermarked": "what a pity it is that mr weston ever think of her",
     "num_substitutions": 1,
@@ -99,6 +108,7 @@
     "p_correct_key_on_edited": 0.6843853820598007
   },
   {
+    "length_tokens": 10,
     "original": "i cannot agree with you papa you know i cannot",
     "watermarked": "i cannot match with you papa you know i cannot",
     "num_substitutions": 1,
@@ -110,6 +120,7 @@
     "p_correct_key_on_edited": 0.30564784053156147
   },
   {
+    "length_tokens": 11,
     "original": "must begin we must go and pay wedding visit very soon",
     "watermarked": "must begin we must go and pay marry sojourn very soon",
     "num_substitutions": 2,
@@ -121,6 +132,7 @@
     "p_correct_key_on_edited": 0.43521594684385384
   },
   {
+    "length_tokens": 9,
     "original": "my dear how am i to get so far",
     "watermarked": "my darling how am i to bring so far",
     "num_substitutions": 2,
@@ -132,6 +144,7 @@
     "p_correct_key_on_edited": 0.4950166112956811
   },
   {
+    "length_tokens": 7,
     "original": "i could not walk half so far",
     "watermarked": "i could not walk half so far",
     "num_substitutions": 0,
@@ -143,6 +156,7 @@
     "p_correct_key_on_edited": 1.0
   },
   {
+    "length_tokens": 7,
     "original": "no papa nobody thought of your walking",
     "watermarked": "no pop nobody thought of your walk",
     "num_substitutions": 2,
@@ -154,6 +168,7 @@
     "p_correct_key_on_edited": 1.0
   },
   {
+    "length_tokens": 9,
     "original": "we must go in the carriage to be sure",
     "watermarked": "we must get in the carriage to be trusted",
     "num_substitutions": 2,
@@ -165,6 +180,7 @@
     "p_correct_key_on_edited": 0.4584717607973422
   },
   {
+    "length_tokens": 11,
     "original": "they are to be put into mr weston s stable papa",
     "watermarked": "they are to be put into mr weston s static papa",
     "num_substitutions": 1,
@@ -176,6 +192,7 @@
     "p_correct_key_on_edited": 0.2591362126245847
   },
   {
+    "length_tokens": 8,
     "original": "you know we have settled all that already",
     "watermarked": "you know we have sink all that already",
     "num_substitutions": 1,
@@ -187,6 +204,7 @@
     "p_correct_key_on_edited": 1.0
   },
   {
+    "length_tokens": 10,
     "original": "we talked it all over with mr weston last night",
     "watermarked": "we lecture it all over with mr weston last night",
     "num_substitutions": 1,
@@ -198,6 +216,7 @@
     "p_correct_key_on_edited": 0.8106312292358804
   },
   {
+    "length_tokens": 11,
     "original": "i only doubt whether he will ever take us anywhere else",
     "watermarked": "i only doubt whether he will ever take us anywhere else",
     "num_substitutions": 0,
@@ -209,6 +228,7 @@
     "p_correct_key_on_edited": 0.6910299003322259
   },
   {
+    "length_tokens": 14,
     "original": "nobody thought of hannah till you mentioned her james is so obliged to you",
     "watermarked": "nobody thought of hannah trough you mentioned her james is so obliged to you",
     "num_substitutions": 1,
@@ -220,6 +240,7 @@
     "p_correct_key_on_edited": 0.49169435215946844
   },
   {
+    "length_tokens": 9,
     "original": "i am very glad i did think of her",
     "watermarked": "i am very beaming i did think of her",
     "num_substitutions": 1,
@@ -231,6 +252,7 @@
     "p_correct_key_on_edited": 0.21926910299003322
   },
   {
+    "length_tokens": 11,
     "original": "he will be able to tell her how we all are",
     "watermarked": "he will be able to evidence her how we all are",
     "num_substitutions": 1,
@@ -242,6 +264,7 @@
     "p_correct_key_on_edited": 0.4983388704318937
   },
   {
+    "length_tokens": 12,
     "original": "it was a happy circumstance and animated mr woodhouse for some time",
     "watermarked": "it was a happy context and animated mr woodhouse for some time",
     "num_substitutions": 1,
@@ -253,6 +276,7 @@
     "p_correct_key_on_edited": 0.7475083056478405
   },
   {
+    "length_tokens": 10,
     "original": "i am afraid you must have had a shocking walk",
     "watermarked": "i am afraid you must have had a shocking walking",
     "num_substitutions": 1,
@@ -264,6 +288,7 @@
     "p_correct_key_on_edited": 0.8338870431893688
   },
   {
+    "length_tokens": 10,
     "original": "but you must have found it very damp and dirty",
     "watermarked": "but you must have recover it very moist and dirty",
     "num_substitutions": 2,
@@ -275,6 +300,7 @@
     "p_correct_key_on_edited": 0.43521594684385384
   },
   {
+    "length_tokens": 7,
     "original": "i wish you may not catch cold",
     "watermarked": "i like you may not catch cold",
     "num_substitutions": 1,
@@ -286,6 +312,7 @@
     "p_correct_key_on_edited": 1.0
   },
   {
+    "length_tokens": 14,
     "original": "that is quite surprising for we have had a vast deal of rain here",
     "watermarked": "that is quite surprising for we have had a vast deal of rain here",
     "num_substitutions": 0,
@@ -297,6 +324,7 @@
     "p_correct_key_on_edited": 0.3488372093023256
   },
   {
+    "length_tokens": 13,
     "original": "it rained dreadfully hard for half an hour while we were at breakfast",
     "watermarked": "it rained dreadfully hard for half an hour while we were at breakfast",
     "num_substitutions": 0,
@@ -308,6 +336,7 @@
     "p_correct_key_on_edited": 0.036544850498338874
   },
   {
+    "length_tokens": 8,
     "original": "i wanted them to put off the wedding",
     "watermarked": "i wanted them to put off the wedding",
     "num_substitutions": 0,
@@ -319,6 +348,7 @@
     "p_correct_key_on_edited": 1.0
   },
   {
+    "length_tokens": 9,
     "original": "by the bye i have not wished you joy",
     "watermarked": "by the adios i have not bid you joy",
     "num_substitutions": 2,

@@ -1,5 +1,6 @@
 [
   {
+    "length_tokens": 8,
     "original": "between it was more the intimacy of sisters",
     "orig_roughness": 28.495786666870117,
     "empathetic_target_roughness": 23.24597155709112,
@@ -16,6 +17,7 @@
     "urgent_text": "between it was more the involvement of sisters"
   },
   {
+    "length_tokens": 10,
     "original": "it was miss taylor s loss which first brought grief",
     "orig_roughness": 12.042202949523926,
     "empathetic_target_roughness": 10.95215094756295,
@@ -32,6 +34,7 @@
     "urgent_text": "it was miss taylor entropy loss which first land sorrow"
   },
   {
+    "length_tokens": 10,
     "original": "the event had every promise of happiness for her friend",
     "orig_roughness": 22.932390213012695,
     "empathetic_target_roughness": 19.9024305407767,
@@ -48,6 +51,7 @@
     "urgent_text": "the event had every promise of happiness for her quaker"
   },
   {
+    "length_tokens": 13,
     "original": "the want of miss taylor would be felt every hour of every day",
     "orig_roughness": 31.453840255737305,
     "empathetic_target_roughness": 22.853006340637712,
@@ -64,6 +68,7 @@
     "urgent_text": "the want of miss taylor would be find every hour of every day"
   },
   {
+    "length_tokens": 12,
     "original": "she dearly loved her father but he was no companion for her",
     "orig_roughness": 28.791898727416992,
     "empathetic_target_roughness": 22.313443152101307,
@@ -80,6 +85,7 @@
     "urgent_text": "she dear love her founder but he was no fellow for her"
   },
   {
+    "length_tokens": 10,
     "original": "he could not meet her in conversation rational or playful",
     "orig_roughness": 23.85991668701172,
     "empathetic_target_roughness": 18.701482874238433,
@@ -96,6 +102,7 @@
     "urgent_text": "he could not receive her in conversation rational or playful"
   },
   {
+    "length_tokens": 7,
     "original": "the woodhouses were first in consequence there",
     "orig_roughness": 14.358412742614746,
     "empathetic_target_roughness": 14.358412056995583,
@@ -112,6 +119,7 @@
     "urgent_text": "the woodhouses were first in import there"
   },
   {
+    "length_tokens": 9,
     "original": "poor miss taylor i wish she were here again",
     "orig_roughness": 31.020923614501953,
     "empathetic_target_roughness": 29.85256874685566,
@@ -128,6 +136,7 @@
     "urgent_text": "inadequate miss taylor i like she were here again"
   },
   {
+    "length_tokens": 12,
     "original": "what a pity it is that mr weston ever thought of her",
     "orig_roughness": 25.722169876098633,
     "empathetic_target_roughness": 17.157050802093437,
@@ -144,6 +153,7 @@
     "urgent_text": "what a ruth it is that mr weston always believe of her"
   },
   {
+    "length_tokens": 10,
     "original": "i cannot agree with you papa you know i cannot",
     "orig_roughness": 37.87825012207031,
     "empathetic_target_roughness": 32.35081739105754,
@@ -160,6 +170,7 @@
     "urgent_text": "i cannot agree with you papa you acknowledge i cannot"
   },
   {
+    "length_tokens": 11,
     "original": "must begin we must go and pay wedding visit very soon",
     "orig_roughness": 21.4677791595459,
     "empathetic_target_roughness": 17.237970488018924,
@@ -176,6 +187,7 @@
     "urgent_text": "must start we must go and pay tie sojourn really shortly"
   },
   {
+    "length_tokens": 9,
     "original": "my dear how am i to get so far",
     "orig_roughness": 18.565570831298828,
     "empathetic_target_roughness": 17.19575869615207,
@@ -192,6 +204,7 @@
     "urgent_text": "my beloved how am i to find so far"
   },
   {
+    "length_tokens": 7,
     "original": "i could not walk half so far",
     "orig_roughness": 13.920461654663086,
     "empathetic_target_roughness": 13.920462526784656,
@@ -208,6 +221,7 @@
     "urgent_text": "i could not walk half so far"
   },
   {
+    "length_tokens": 7,
     "original": "no papa nobody thought of your walking",
     "orig_roughness": 7.990293502807617,
     "empathetic_target_roughness": 7.990293838676373,
@@ -224,6 +238,7 @@
     "urgent_text": "no pop nobody thought of your walk"
   },
   {
+    "length_tokens": 9,
     "original": "we must go in the carriage to be sure",
     "orig_roughness": 27.888395309448242,
     "empathetic_target_roughness": 27.305558516254074,
@@ -240,6 +255,7 @@
     "urgent_text": "we must get in the coach to be certain"
   },
   {
+    "length_tokens": 11,
     "original": "they are to be put into mr weston s stable papa",
     "orig_roughness": 33.372276306152344,
     "empathetic_target_roughness": 25.971428818195687,
@@ -256,6 +272,7 @@
     "urgent_text": "they are to be arrange into mr weston second static papa"
   },
   {
+    "length_tokens": 8,
     "original": "you know we have settled all that already",
     "orig_roughness": 27.087867736816406,
     "empathetic_target_roughness": 22.601466390618576,
@@ -272,6 +289,7 @@
     "urgent_text": "you know we have fall all that already"
   },
   {
+    "length_tokens": 10,
     "original": "we talked it all over with mr weston last night",
     "orig_roughness": 12.370543479919434,
     "empathetic_target_roughness": 10.782329919185266,
@@ -288,6 +306,7 @@
     "urgent_text": "we utter it all over with mr weston last night"
   },
   {
+    "length_tokens": 11,
     "original": "i only doubt whether he will ever take us anywhere else",
     "orig_roughness": 29.0831241607666,
     "empathetic_target_roughness": 25.033322786482703,
@@ -304,6 +323,7 @@
     "urgent_text": "i only doubt whether he will ever make us anywhere else"
   },
   {
+    "length_tokens": 14,
     "original": "nobody thought of hannah till you mentioned her james is so obliged to you",
     "orig_roughness": 32.76210403442383,
     "empathetic_target_roughness": 23.779370853758316,
@@ -320,6 +340,7 @@
     "urgent_text": "nobody sentiment of hannah trough you note her james is so obliged to you"
   },
   {
+    "length_tokens": 9,
     "original": "i am very glad i did think of her",
     "orig_roughness": 21.856277465820312,
     "empathetic_target_roughness": 23.55899461105071,
@@ -336,6 +357,7 @@
     "urgent_text": "i am very beaming i do think of her"
   },
   {
+    "length_tokens": 11,
     "original": "he will be able to tell her how we all are",
     "orig_roughness": 43.07896423339844,
     "empathetic_target_roughness": 33.18544217695052,
@@ -352,6 +374,7 @@
     "urgent_text": "he will be able to say her how we all are"
   },
   {
+    "length_tokens": 12,
     "original": "it was a happy circumstance and animated mr woodhouse for some time",
     "orig_roughness": 15.413225173950195,
     "empathetic_target_roughness": 11.224723202327354,
@@ -368,6 +391,7 @@
     "urgent_text": "it was a happy context and inspire mr woodhouse for some time"
   },
   {
+    "length_tokens": 10,
     "original": "i am afraid you must have had a shocking walk",
     "orig_roughness": 32.17311096191406,
     "empathetic_target_roughness": 26.700542573705434,
@@ -384,6 +408,7 @@
     "urgent_text": "i am afraid you must have had a shocking walking"
   },
   {
+    "length_tokens": 10,
     "original": "but you must have found it very damp and dirty",
     "orig_roughness": 27.600746154785156,
     "empathetic_target_roughness": 23.037097457019957,
@@ -400,6 +425,7 @@
     "urgent_text": "but you must have found it really moist and dirty"
   },
   {
+    "length_tokens": 7,
     "original": "i wish you may not catch cold",
     "orig_roughness": 23.85067367553711,
     "empathetic_target_roughness": 23.850672630443047,
@@ -416,6 +442,7 @@
     "urgent_text": "i like you may not catch cold"
   },
   {
+    "length_tokens": 14,
     "original": "that is quite surprising for we have had a vast deal of rain here",
     "orig_roughness": 38.198143005371094,
     "empathetic_target_roughness": 27.48245028920646,
@@ -432,6 +459,7 @@
     "urgent_text": "that is quite surprising for we have had a huge raft of rain here"
   },
   {
+    "length_tokens": 13,
     "original": "it rained dreadfully hard for half an hour while we were at breakfast",
     "orig_roughness": 38.91432571411133,
     "empathetic_target_roughness": 29.955177476148926,
@@ -448,6 +476,7 @@
     "urgent_text": "it rained dreadfully hard for half an hour while we were at breakfast"
   },
   {
+    "length_tokens": 8,
     "original": "i wanted them to put off the wedding",
     "orig_roughness": 11.187251091003418,
     "empathetic_target_roughness": 9.332998125648922,
@@ -464,6 +493,7 @@
     "urgent_text": "i wanted them to place off the marriage"
   },
   {
+    "length_tokens": 9,
     "original": "by the bye i have not wished you joy",
     "orig_roughness": 37.72478103637695,
     "empathetic_target_roughness": 37.69638879814831,

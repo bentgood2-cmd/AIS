@@ -227,6 +227,54 @@ LM, either of which is a substantial project in its own right — but it's
 worth naming as a second, independent reason the "decoding" step is
 harder than the source material implies.
 
+## Follow-up experiment: does more text length fix it?
+
+The natural next question is whether the sentence-level failure is a
+*statistical-power* problem (too few independent frequency bins, too few
+substitutable words) that simply goes away with longer text, or a deeper
+limitation of lexical-substitution decoding. I reran the identical
+pipeline (`experiments/run_paragraph_experiment.py`, same code path via
+the shared `evaluation.evaluate_corpus`) on 10 paragraphs (100-200 words,
+mean 120 tokens vs. 10 for sentences) instead of single sentences:
+
+| metric | sentence (mean 10 tok) | paragraph (mean 120 tok) |
+|---|---|---|
+| Watermark true positive rate | 3.3% | 10% |
+| Watermark false positive rate (wrong key) | 10% | 20% |
+| Mean substitutions per unit | 1.2 | 14.4 |
+| Original trajectory roughness | 25.7 | 291.2 |
+| Empathetic **target** roughness | 21.7 | 161.8 |
+| Urgent **target** roughness | 36.5 | 460.7 |
+| Empathetic **realized** roughness | 25.5 | 286.1 |
+| Urgent **realized** roughness | 25.7 | 284.5 |
+
+(`n=10` texts, so the watermark percentages above are noisy — read them as
+directional, not precise.)
+
+**The answer is: partially, and unevenly.** Watermark TPR did move up (3x,
+though the base rates are too small-sample to be confident it's not just
+noise), consistent with more independent frequency bins giving the
+statistic more to work with. But the persona-modulation result is the
+clean one: even with **12x more substitutions available** (14.4 words
+changed in a 120-word paragraph vs. 1.2 in a 10-word sentence), the
+realized roughness gap between empathetic and urgent output is still
+essentially zero (286.1 vs. 284.5) against an idealized target gap that
+grew just as dramatically as everything else with length (161.8 vs.
+460.7, a ~3x spread). More substitution budget did not translate into more
+realized stylistic differentiation, even proportionally.
+
+The reason is structural, not a search-budget problem: `synonym_candidates`
+ranks WordNet substitutions by embedding-cosine similarity to the original
+word, and true synonyms *are* close together in embedding space by
+definition. Each individual substitution is capped at a small nudge no
+matter how many of them you make or how long the text is — the ceiling is
+per-word, not per-document. Paragraph length fixes the *statistical*
+half of the problem (more independent bins → somewhat better watermark
+detection power) but does nothing for the *expressive* half (single-word
+lexical substitution structurally cannot span the distance to an arbitrary
+spectral target). That's the harder, second fix from the list below, and
+these numbers are the evidence that it's the one that actually matters.
+
 ## Bottom line
 
 If you want to build a real system out of this idea, the buildable,
@@ -241,11 +289,15 @@ persona/watermark effect survive contact with real text, you'd need one of:
    phrasings (not just single-word swaps) scored by embedding-distance +
    LM likelihood — much larger search space, much more expressive, and
    actually closer to what "Active Inference decoding" would need to mean
-   to work. Not attempted here (out of scope for local-CPU-only,
-   offline-only constraints) but is the natural next experiment.
+   to work. **This is the one that matters most** — see the paragraph
+   experiment above: even a 12x increase in substitution budget left
+   persona differentiation essentially at zero, because single-word
+   synonym substitution has a hard, per-word expressiveness ceiling that
+   more text doesn't relax.
 2. **Longer units of text** (paragraphs/documents, not sentences) for the
-   watermark, since detection power scales with the number of independent
-   frequency bins, which scales with sequence length.
+   watermark — tested above, and it helps, but only partially (TPR ~3%
+   → ~10%, still far from usable) and it does nothing for persona
+   modulation. A necessary companion to #1, not a substitute for it.
 3. **Proper significance calibration** (permutation p-values, which I
    built) instead of an ad hoc correlation threshold, regardless of #1/#2.
 4. **Empirical validation of the phase=facts/magnitude=style split**

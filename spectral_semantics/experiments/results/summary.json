@@ -1,5 +1,6 @@
 {
-  "n_sentences": 30,
+  "n_text_units": 30,
+  "mean_length_tokens": 10.033333333333333,
   "watermark": {
     "true_positive_rate": 0.03333333333333333,
     "false_positive_rate_unwatermarked_text": 0.03333333333333333,
@@ -7,7 +8,7 @@
     "detection_survival_after_1_word_edit": 0.03333333333333333,
     "mean_semantic_cosine_to_original": 0.9985206623872122,
     "mean_fluency_delta_per_token": -0.01822037419713087,
-    "mean_substitutions_per_sentence": 1.2
+    "mean_substitutions_per_text_unit": 1.2
   },
   "persona": {
     "original_trajectory_roughness": 25.702056884765625,
