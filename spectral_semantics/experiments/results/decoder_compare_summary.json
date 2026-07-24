@@ -1,0 +1,68 @@
+{
+  "wordnet_only": {
+    "n_text_units": 30,
+    "mean_length_tokens": 10.033333333333333,
+    "watermark": {
+      "true_positive_rate": 0.03333333333333333,
+      "false_positive_rate_unwatermarked_text": 0.03333333333333333,
+      "false_positive_rate_wrong_key": 0.1,
+      "detection_survival_after_1_word_edit": 0.03333333333333333,
+      "mean_semantic_cosine_to_original": 0.9985206623872122,
+      "mean_fluency_delta_per_token": -0.01822037419713087,
+      "mean_substitutions_per_text_unit": 1.2
+    },
+    "persona": {
+      "original_trajectory_roughness": 25.702056884765625,
+      "empathetic_target_roughness": 21.65099281947289,
+      "urgent_target_roughness": 36.45317656405786,
+      "empathetic_realized_roughness_after_discretization": 25.526312096913657,
+      "urgent_realized_roughness_after_discretization": 25.67494691212972,
+      "empathetic_semantic_cosine_to_original": 0.9986508389314016,
+      "urgent_semantic_cosine_to_original": 0.9970929880936941
+    }
+  },
+  "wordnet_plus_trigram_candidates": {
+    "n_text_units": 30,
+    "mean_length_tokens": 10.033333333333333,
+    "watermark": {
+      "true_positive_rate": 0.06666666666666667,
+      "false_positive_rate_unwatermarked_text": 0.03333333333333333,
+      "false_positive_rate_wrong_key": 0.13333333333333333,
+      "detection_survival_after_1_word_edit": 0,
+      "mean_semantic_cosine_to_original": 0.9774179657300314,
+      "mean_fluency_delta_per_token": 0.20235716313156474,
+      "mean_substitutions_per_text_unit": 2.966666666666667
+    },
+    "persona": {
+      "original_trajectory_roughness": 25.702056884765625,
+      "empathetic_target_roughness": 21.65099281947289,
+      "urgent_target_roughness": 36.45317656405786,
+      "empathetic_realized_roughness_after_discretization": 25.20866362253825,
+      "urgent_realized_roughness_after_discretization": 28.77783991495768,
+      "empathetic_semantic_cosine_to_original": 0.996491273244222,
+      "urgent_semantic_cosine_to_original": 0.9673917571703593
+    }
+  },
+  "wordnet_plus_neural_candidates_and_fluency": {
+    "n_text_units": 30,
+    "mean_length_tokens": 10.033333333333333,
+    "watermark": {
+      "true_positive_rate": 0.03333333333333333,
+      "false_positive_rate_unwatermarked_text": 0.03333333333333333,
+      "false_positive_rate_wrong_key": 0.06666666666666667,
+      "detection_survival_after_1_word_edit": 0.03333333333333333,
+      "mean_semantic_cosine_to_original": 0.9693598488966624,
+      "mean_fluency_delta_per_token": 0.14517058714877462,
+      "mean_substitutions_per_text_unit": 2.7
+    },
+    "persona": {
+      "original_trajectory_roughness": 25.702056884765625,
+      "empathetic_target_roughness": 21.65099281947289,
+      "urgent_target_roughness": 36.45317656405786,
+      "empathetic_realized_roughness_after_discretization": 25.255812295277913,
+      "urgent_realized_roughness_after_discretization": 31.907274850209554,
+      "empathetic_semantic_cosine_to_original": 0.9959451258182526,
+      "urgent_semantic_cosine_to_original": 0.946365741888682
+    }
+  }
+}

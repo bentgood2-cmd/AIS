@@ -336,6 +336,77 @@ with genuinely uncertain payoff (30K sentences is thin for a neural LM to
 learn much beyond what the n-gram counts already capture), and I stopped
 here rather than open-endedly pursue it without checking scope first.
 
+## Third follow-up: does training a small neural LM from scratch fix it?
+
+I went ahead and trained one anyway (`spectral_semantics/neural_lm.py`): a
+1-layer, 128-dim-embedding/256-hidden-unit word-level LSTM, trained for 5
+epochs on the same ~30K-sentence local corpus (no external download — torch
+itself installs fine from PyPI; it's only pretrained *weights* that are
+blocked). Val perplexity plateaued around 430-440, which is weak by
+neural-LM standards but categorically different from the trigram model: it
+generalizes through learned embeddings instead of exact n-gram
+memorization. Wired it in as both a candidate proposer
+(`neural_candidates`, using the model's real next-token distribution) and
+a fluency judge (`NeuralLM` implements the same
+`sentence_logprob_per_token` interface as `TrigramLM`, so it drops
+straight into `guided_rewrite`'s scoring). Then ran all three decoder
+configurations — WordNet-only, WordNet+trigram-proposed, WordNet+neural-
+proposed-and-judged — through the identical measurement pipeline on the
+same 30 sentences (`experiments/compare_decoders.py`).
+
+| metric | WordNet-only | +trigram candidates | +neural candidates & fluency |
+|---|---|---|---|
+| Watermark TPR | 3.3% | 6.7% | 3.3% |
+| Mean semantic cosine to original | 0.999 | 0.977 | **0.969** |
+| Mean fluency delta (per the *scorer being optimized against*) | −0.018 | **+0.202** | **+0.145** |
+| Mean substitutions per sentence | 1.2 | 3.0 | 2.7 |
+| Urgent realized roughness (target 36.5, orig 25.7) | 25.7 | 28.8 | **31.9** |
+| Empathetic realized roughness (target 21.7, orig 25.7) | 25.5 | 25.2 | 25.3 |
+
+Genuinely mixed, not a clean win in either direction:
+
+- **The good part**: "urgent" persona differentiation, which was
+  essentially zero with WordNet-only, does now partially show up — 25.7 →
+  28.8 → 31.9 against a target of 36.5, closing roughly 58% of the gap with
+  the neural decoder, its best showing anywhere in this investigation.
+- **The bad part**: watermark detection stayed flat at chance level
+  (3.3%) with the neural decoder specifically — no better than doing
+  nothing, despite the extra reach. My read: a PRNG watermark mask needs
+  precise, sign-correct control across many independent frequency bins
+  simultaneously (a fine-grained, high-dimensional target), while "make it
+  generally spikier" (urgent) is a coarse, forgiving one that many
+  different substitutions satisfy. Decoder expressiveness helps the coarse
+  task and not the fine one.
+- **"Empathetic" (smoothing) stayed flat everywhere** — 25.5/25.2/25.3,
+  regardless of decoder, vs. a target of 21.7. *Increasing* trajectory
+  roughness is easy: almost any substitution that changes a value creates
+  local discontinuity. *Decreasing* it requires finding words that make
+  neighboring embeddings more similar than they already were — a narrower
+  target that more candidates and a better fluency judge didn't help hit.
+  This directional asymmetry (roughening is easy, smoothing is hard) isn't
+  mentioned anywhere in the source material and only shows up once you
+  actually measure it.
+- **Fidelity got worse, not better, with the neural decoder** — mean
+  semantic cosine to the original dropped further (0.969 vs. 0.977 for
+  trigram-only), for only a marginal gain in target-distance. And the
+  *positive* fluency deltas (both expanded configs score their own outputs
+  as more fluent than the unedited original) are a red flag, not good
+  news: it means the search is at least partly optimizing against
+  exploitable blind spots in whichever fluency model is judging it, not
+  producing genuinely better text. Spot-checking the actual output
+  confirms this — e.g. `"between it was an the same of an"` (neural) and
+  `"between it even more the end of af"` (trigram), both scored as *more*
+  fluent than the grammatical original by their respective judges.
+
+So: a from-scratch small neural LM is a real, different mechanism (and it
+does move the one metric — urgent-persona roughness — furthest of
+anything tried), but at 30K training sentences and this model size it's
+not a fix, it's a different set of tradeoffs. It confirms the "uncertain
+payoff" concern from the previous section was warranted — the honest
+takeaway is that closing this gap for real needs a properly pretrained
+model (blocked in this environment) or substantially more local training
+data and capacity than was practical to pursue further here.
+
 ## Bottom line
 
 If you want to build a real system out of this idea, the buildable,
@@ -346,19 +417,24 @@ watermarking (SemStamp, Kirchenbauer et al.)** — not "Active Inference"
 and not "eradicating autoregressive myopia." Concretely, to make the
 persona/watermark effect survive contact with real text, you'd need one of:
 
-1. **A real (neural, generalizing) LM as the decoder**, sampling/searching
-   over full phrasings scored by embedding-distance + LM likelihood — not
-   just a bigger candidate list. **This is the one that matters most**, and
-   two follow-up experiments narrow down exactly why: the paragraph
-   experiment showed a 12x increase in substitution budget left persona
-   differentiation at zero (a per-word expressiveness ceiling that more
-   text doesn't relax); the WordNet-vs-LM-proposal experiment then showed
-   that relaxing *which* words are eligible does help close the distance
-   gap, but our smoothed trigram model can't judge whether the result is
-   still coherent, because it can only recognize fluency it has seen
-   verbatim, not fluency it can generalize to. Both the candidate proposer
-   and the fluency judge need a model that generalizes — that's specifically
-   a neural LM, not just more data or more candidates fed to an n-gram one.
+1. **A properly pretrained, generalizing LM as the decoder**, sampling/
+   searching over full phrasings scored by embedding-distance + LM
+   likelihood — not just a bigger candidate list, and, per the third
+   follow-up, not just *any* neural LM either. Three experiments narrow
+   this down in sequence: the paragraph experiment showed a 12x increase in
+   substitution budget left persona differentiation at zero (a per-word
+   ceiling more text doesn't relax); the WordNet-vs-LM-proposal experiment
+   showed that relaxing *which* words are eligible does close real
+   distance, but a trigram model can't judge whether the result stays
+   coherent; training an actual neural LM from scratch confirmed the
+   *mechanism* (generalizing past memorized n-grams) is necessary but found
+   it isn't *sufficient* at 30K sentences and modest model size — it helped
+   the coarse "roughen the trajectory" objective but not the fine-grained
+   watermark one, and both expanded configs still ended up exploiting blind
+   spots in whichever fluency model was judging them rather than producing
+   genuinely fluent text. A real fix needs a pretrained model — blocked in
+   this environment — or substantially more local data/capacity than was
+   practical to pursue further here.
 2. **Longer units of text** (paragraphs/documents, not sentences) for the
    watermark — tested above, and it helps, but only partially (TPR ~3%
    → ~10%, still far from usable) and it does nothing for persona
