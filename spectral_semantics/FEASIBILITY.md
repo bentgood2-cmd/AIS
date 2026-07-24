@@ -407,6 +407,58 @@ takeaway is that closing this gap for real needs a properly pretrained
 model (blocked in this environment) or substantially more local training
 data and capacity than was practical to pursue further here.
 
+## Fourth follow-up: does more local training data close the gap?
+
+Worth checking before assuming a bigger pretrained model is the only way
+forward: the 30K-sentence neural LM turned out to never see a single
+Gutenberg sentence at all — `training_sentences()`'s default 30,000-
+sentence cap is reached from Brown alone (57,340 sentences), so Gutenberg
+never got appended. I retrained on the true full local corpus — all of
+Brown + all of Gutenberg, 144,918 sentences, 3.1M tokens, ~5.2x more data
+— same architecture, and reran the identical comparison
+(`experiments/compare_full_corpus_neural_lm.py`).
+
+| metric | 30k sentences | 145k sentences |
+|---|---|---|
+| Validation perplexity | 430-440 | 610-616 (**worse**) |
+| Watermark TPR | 3.3% | 3.3% (unchanged) |
+| Urgent realized roughness (target 36.5) | 31.9 | **29.7 (worse)** |
+| Empathetic realized roughness (target 21.7) | 25.3 | 25.2 (unchanged) |
+| Mean fluency delta | +0.145 (reward-hacking the judge) | **−0.538** |
+
+**More data did not help — on the main metrics it's a wash or slightly
+worse**, not the fix I'd hoped for when proposing this as the "cheap
+thing to try first." Two results worth separating out:
+
+- The *bad* news: watermark detection is exactly as stuck as before, and
+  urgent-persona differentiation (the one clear win from the smaller
+  model) went backward, 31.9 → 29.7. The qualitative outputs are just as
+  broken (`"between it was an the same of an"`, `"it was miss smith and
+  mind which first to sorrow"`).
+- The *interesting* news: the fluency delta flipped from **positive**
+  (+0.145 — the search fooling its own judge into rating garbled output as
+  more fluent than the original) to **negative** (−0.538 — the judge now
+  correctly recognizes most candidate substitutions as degrading fluency,
+  and the search knowingly trades that away for target-distance instead of
+  getting fooled). That's a real, measurable improvement in the model's
+  discriminative honesty — but it didn't translate into better final text,
+  because the search's fluency penalty is a soft, weighted term, not a
+  hard constraint, so a harder-to-fool judge just changes *which* penalty
+  gets paid, not whether one does.
+
+Likely confounds, so this isn't a clean "more data doesn't help, period"
+result: I also cut epochs from 5 to 3 (to keep training time bounded) and
+the vocabulary more than doubled (14,108 → 30,551 words) alongside the
+harder, more stylistically heterogeneous corpus (Brown's news/fiction/
+academic mix plus 18 full Gutenberg novels) — both of which make the
+underlying classification problem harder independent of how much data the
+model saw. What this result does support is the specific, narrower claim
+that "just add more of the locally-available text" is not a free win — it
+did not obviously outperform the smaller run on any end-to-end metric that
+matters (detection rate, persona differentiation, coherence), so it isn't
+worth pursuing further as a low-effort fix. A real pretrained model
+remains the more promising lever, and that path is blocked here.
+
 ## Bottom line
 
 If you want to build a real system out of this idea, the buildable,
@@ -432,16 +484,31 @@ persona/watermark effect survive contact with real text, you'd need one of:
    the coarse "roughen the trajectory" objective but not the fine-grained
    watermark one, and both expanded configs still ended up exploiting blind
    spots in whichever fluency model was judging them rather than producing
-   genuinely fluent text. A real fix needs a pretrained model — blocked in
-   this environment — or substantially more local data/capacity than was
-   practical to pursue further here.
-2. **Longer units of text** (paragraphs/documents, not sentences) for the
-   watermark — tested above, and it helps, but only partially (TPR ~3%
-   → ~10%, still far from usable) and it does nothing for persona
-   modulation. A necessary companion to #1, not a substitute for it.
-3. **Proper significance calibration** (permutation p-values, which I
-   built) instead of an ad hoc correlation threshold, regardless of #1/#2.
-4. **Empirical validation of the phase=facts/magnitude=style split**
+   genuinely fluent text. The fourth follow-up then ruled out the cheap
+   version of this fix specifically: retraining on 5x more local data (the
+   full 145K-sentence corpus, not the 30K-sentence subset that never
+   actually included any Gutenberg text) didn't improve detection or
+   persona differentiation, and on some metrics made them slightly worse.
+   A real fix needs an actually pretrained model — blocked in this
+   environment — not just more locally-available training text.
+2. **Redesign the watermark as a coarse per-token signal instead of a
+   fine-grained continuous spectral target** — e.g. Kirchenbauer et al.'s
+   "green-list" token biasing, which is what real LLM watermarking
+   actually uses. Every experiment here shows the same shape: coarse,
+   forgiving objectives (roughen a trajectory) get partially achieved by
+   whichever decoder is used, fine-grained, sign-correct ones (matching a
+   PRNG mask across many frequency bins simultaneously) never do, no
+   matter how much the decoder improves. That's a strong signal the
+   watermark mechanism itself — not just the decoder searching for it — is
+   the wrong shape for discrete text, and is probably the single highest-
+   leverage change left untried in this investigation.
+3. **Longer units of text** (paragraphs/documents, not sentences) for the
+   watermark — tested above, and it helps a little (TPR ~3% → ~10%, still
+   far from usable) but doesn't touch persona modulation. Worth combining
+   with #2, not a substitute for it.
+4. **Proper significance calibration** (permutation p-values, which I
+   built) instead of an ad hoc correlation threshold, regardless of the above.
+5. **Empirical validation of the phase=facts/magnitude=style split**
    before relying on it further — it's the framework's central assumption
    and it is currently untested even here.
 
