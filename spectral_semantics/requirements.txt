@@ -3,3 +3,4 @@ scipy
 nltk
 gensim
 pytest
+torch  # optional: only needed for spectral_semantics/neural_lm.py (~1.2GB CPU build)

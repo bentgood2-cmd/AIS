@@ -59,7 +59,14 @@ def evaluate_corpus(
     sig_level: float = 0.05,
     beam_size: int = 8,
     seed: int = 0,
+    decoder_kwargs: dict | None = None,
 ) -> tuple[dict, list[dict], list[dict]]:
+    """decoder_kwargs is forwarded to every guided_rewrite() call (e.g.
+    {"use_neural_candidates": True, "neural_lm": nlm, "fluency_scorer": nlm})
+    so different decoder configurations can be run through the exact same
+    measurement pipeline for a like-for-like comparison.
+    """
+    decoder_kwargs = decoder_kwargs or {}
     rng = random.Random(seed)
     watermark_rows: list[dict] = []
     persona_rows: list[dict] = []
@@ -72,7 +79,7 @@ def evaluate_corpus(
 
         # ---- Watermarking ----
         wm_mask = prng_mask(watermark_key, L)
-        wm_result = guided_rewrite(tokens, embedder, lm, wm_mask, band, strength=strength, beam_size=beam_size)
+        wm_result = guided_rewrite(tokens, embedder, lm, wm_mask, band, strength=strength, beam_size=beam_size, **decoder_kwargs)
 
         _, p_correct_on_watermarked = permutation_pvalue(
             embedder, wm_result.tokens, watermark_key, band, n_permutations=n_permutations, seed=1
@@ -111,7 +118,7 @@ def evaluate_corpus(
             target_E = idft_reconstruct(
                 modulate_magnitude(target_mag, mask, band, strength), target_phase
             )
-            result = guided_rewrite(tokens, embedder, lm, mask, band, strength=strength, beam_size=beam_size)
+            result = guided_rewrite(tokens, embedder, lm, mask, band, strength=strength, beam_size=beam_size, **decoder_kwargs)
             realized_E = embedder.encode(result.tokens)
             row[f"{kind}_target_roughness"] = roughness(target_E)
             row[f"{kind}_realized_roughness"] = roughness(realized_E)

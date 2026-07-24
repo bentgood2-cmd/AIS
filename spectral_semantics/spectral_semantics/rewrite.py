@@ -135,27 +135,51 @@ def lm_proposal_candidates(
     return ranked[:top_k]
 
 
+def neural_candidates(
+    tokens: list[str],
+    position: int,
+    neural_lm,  # neural_lm.NeuralLM -- not type-hinted to avoid a hard torch import here
+    top_k: int = 12,
+) -> list[str]:
+    """Candidate substitutions proposed by a real neural LM's next-token
+    distribution given the left context, instead of trigram counts. Unlike
+    TrigramLM, an unseen-but-fluent continuation isn't automatically
+    indistinguishable from a nonsensical one, because the model generalizes
+    through learned embeddings rather than exact n-gram memorization (see
+    neural_lm.py's docstring and FEASIBILITY.md for why that distinction
+    turned out to matter).
+    """
+    return neural_lm.topk_next_words(tokens[:position], top_k=top_k)
+
+
 def candidate_words(
     tokens: list[str],
     position: int,
     embedder: Embedder,
     lm: TrigramLM | None = None,
+    neural_lm=None,
     tags: list[tuple[str, str]] | None = None,
     max_wordnet: int = 6,
     max_lm: int = 10,
+    max_neural: int = 10,
 ) -> list[str]:
-    """Union of WordNet synonyms and (if `lm` is given) LM-proposed words,
-    original word always first. See synonym_candidates and
-    lm_proposal_candidates for what each source contributes.
+    """Union of WordNet synonyms, (if `lm` given) trigram-LM-proposed words,
+    and (if `neural_lm` given) neural-LM-proposed words, original word
+    always first. See synonym_candidates / lm_proposal_candidates /
+    neural_candidates for what each source contributes.
     """
     word = tokens[position]
     wn_cands = synonym_candidates(tokens, position, embedder, max_candidates=max_wordnet, tags=tags)
-    if lm is None:
+    extra: list[str] = []
+    if lm is not None:
+        extra += lm_proposal_candidates(tokens, position, lm, embedder, top_k=max_lm)
+    if neural_lm is not None:
+        extra += [w for w in neural_candidates(tokens, position, neural_lm, top_k=max_neural) if embedder.in_vocab(w)]
+    if not extra:
         return wn_cands
-    lm_cands = lm_proposal_candidates(tokens, position, lm, embedder, top_k=max_lm)
     seen = {word}
     merged = [word]
-    for w in wn_cands[1:] + lm_cands:
+    for w in wn_cands[1:] + extra:
         if w not in seen:
             seen.add(w)
             merged.append(w)
@@ -197,12 +221,30 @@ def guided_rewrite(
     fluency_weight: float = 2.0,
     use_lm_candidates: bool = False,
     max_lm_candidates: int = 10,
+    neural_lm=None,
+    use_neural_candidates: bool = False,
+    max_neural_candidates: int = 10,
+    fluency_scorer=None,
 ) -> RewriteResult:
+    """
+    lm: TrigramLM, used for the fluency penalty by default, and as a
+        candidate proposer when use_lm_candidates=True.
+    neural_lm: optional neural_lm.NeuralLM. When given with
+        use_neural_candidates=True, it proposes candidates instead of (or
+        alongside) the trigram proposer. It implements the same
+        sentence_logprob_per_token interface as TrigramLM, so pass
+        fluency_scorer=neural_lm to also use it (instead of `lm`) as the
+        fluency judge in the search objective -- the two roles are
+        independent, since FEASIBILITY.md found that a better *proposer*
+        alone (trigram-based) wasn't enough; the *judge* needed to
+        generalize too.
+    """
+    fluency_scorer = fluency_scorer if fluency_scorer is not None else lm
     target_E = spectral_target(embedder, tokens, mask_signal, band, strength)
     target_mag, _ = dft_decompose(target_E)
     target_band_mag = target_mag[:, band.astype(bool)]
 
-    baseline_fluency = lm.sentence_logprob_per_token(tokens)
+    baseline_fluency = fluency_scorer.sentence_logprob_per_token(tokens)
 
     # Tag once and reuse: synonym_candidates used to re-run nltk.pos_tag on the
     # full token list for every position, which is quadratic in sequence
@@ -213,15 +255,17 @@ def guided_rewrite(
         p: candidate_words(
             tokens, p, embedder,
             lm=lm if use_lm_candidates else None,
+            neural_lm=neural_lm if use_neural_candidates else None,
             tags=tags,
             max_lm=max_lm_candidates,
+            max_neural=max_neural_candidates,
         )
         for p in positions
     }
 
     def score(cand_tokens: list[str]) -> float:
         dist = float(np.sum((_band_magnitude(embedder, cand_tokens, band) - target_band_mag) ** 2))
-        fluency = lm.sentence_logprob_per_token(cand_tokens)
+        fluency = fluency_scorer.sentence_logprob_per_token(cand_tokens)
         fluency_penalty = fluency_weight * max(0.0, baseline_fluency - fluency)
         return dist + fluency_penalty
 
@@ -251,7 +295,7 @@ def guided_rewrite(
     return RewriteResult(
         tokens=best_tokens,
         band_distance=final_dist,
-        fluency_per_token=lm.sentence_logprob_per_token(best_tokens),
+        fluency_per_token=fluency_scorer.sentence_logprob_per_token(best_tokens),
         baseline_fluency_per_token=baseline_fluency,
         semantic_cosine_to_original=cosine,
         num_substitutions=num_subs,
