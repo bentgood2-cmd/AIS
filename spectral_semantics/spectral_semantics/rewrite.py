@@ -20,6 +20,13 @@ fluency loss under a local trigram LM. It is a concrete instance of "select
 synonymous vocabulary to satisfy the mask" -- scoped down from free-form
 generation to lexical substitution, which is the part that's actually
 well-defined and computationally tractable.
+
+guided_rewrite(..., use_lm_candidates=True) additionally offers
+lm_proposal_candidates: substitutions proposed by local n-gram fluency
+across the whole vocabulary rather than WordNet-synonym proximity, to test
+whether WordNet's narrow, embedding-space-local candidate sets were the
+actual bottleneck found in the sentence/paragraph experiments (see
+FEASIBILITY.md).
 """
 from __future__ import annotations
 
@@ -30,7 +37,7 @@ import numpy as np
 from nltk.corpus import wordnet as wn
 
 from .embeddings import Embedder
-from .ngram_lm import TrigramLM
+from .ngram_lm import BOS, EOS, TrigramLM
 from .spectral import dft_decompose, idft_reconstruct, modulate_magnitude
 
 
@@ -94,6 +101,67 @@ def synonym_candidates(
     return [word] + ranked[: max_candidates - 1]
 
 
+def lm_proposal_candidates(
+    tokens: list[str],
+    position: int,
+    lm: TrigramLM,
+    embedder: Embedder,
+    top_k: int = 12,
+) -> list[str]:
+    """Candidate substitutions proposed by the language model itself,
+    scored by local two-sided trigram context fluency across the *entire*
+    embedding vocabulary -- not restricted to WordNet synonyms.
+
+    synonym_candidates only ever offers words that are already close to the
+    original in embedding space (true synonyms cluster tightly by
+    construction), which caps how far a single substitution can move the
+    trajectory regardless of how much beam search or how many positions are
+    available (see FEASIBILITY.md's paragraph-length experiment). This
+    function instead asks "what word would still read fluently here",
+    independent of embedding-space proximity to the original word, to test
+    whether relaxing that constraint lets the decoder actually reach a
+    spectral target that plain synonym substitution cannot.
+    """
+    L = len(tokens)
+    left2 = tokens[position - 2] if position >= 2 else BOS
+    left1 = tokens[position - 1] if position >= 1 else BOS
+    right1 = tokens[position + 1] if position + 1 < L else EOS
+
+    def context_score(w: str) -> float:
+        return lm.trigram_logprob(left2, left1, w) + lm.trigram_logprob(left1, w, right1)
+
+    vocab = embedder.model.wv.index_to_key
+    ranked = sorted(vocab, key=lambda w: (-context_score(w), w))
+    return ranked[:top_k]
+
+
+def candidate_words(
+    tokens: list[str],
+    position: int,
+    embedder: Embedder,
+    lm: TrigramLM | None = None,
+    tags: list[tuple[str, str]] | None = None,
+    max_wordnet: int = 6,
+    max_lm: int = 10,
+) -> list[str]:
+    """Union of WordNet synonyms and (if `lm` is given) LM-proposed words,
+    original word always first. See synonym_candidates and
+    lm_proposal_candidates for what each source contributes.
+    """
+    word = tokens[position]
+    wn_cands = synonym_candidates(tokens, position, embedder, max_candidates=max_wordnet, tags=tags)
+    if lm is None:
+        return wn_cands
+    lm_cands = lm_proposal_candidates(tokens, position, lm, embedder, top_k=max_lm)
+    seen = {word}
+    merged = [word]
+    for w in wn_cands[1:] + lm_cands:
+        if w not in seen:
+            seen.add(w)
+            merged.append(w)
+    return merged
+
+
 @dataclass
 class RewriteResult:
     tokens: list[str]
@@ -127,6 +195,8 @@ def guided_rewrite(
     strength: float,
     beam_size: int = 6,
     fluency_weight: float = 2.0,
+    use_lm_candidates: bool = False,
+    max_lm_candidates: int = 10,
 ) -> RewriteResult:
     target_E = spectral_target(embedder, tokens, mask_signal, band, strength)
     target_mag, _ = dft_decompose(target_E)
@@ -139,7 +209,15 @@ def guided_rewrite(
     # length. Fine for a 10-word sentence, not for a 150-word paragraph.
     tags = nltk.pos_tag(tokens)
     positions = content_positions(tokens, tags=tags)
-    candidate_lists = {p: synonym_candidates(tokens, p, embedder, tags=tags) for p in positions}
+    candidate_lists = {
+        p: candidate_words(
+            tokens, p, embedder,
+            lm=lm if use_lm_candidates else None,
+            tags=tags,
+            max_lm=max_lm_candidates,
+        )
+        for p in positions
+    }
 
     def score(cand_tokens: list[str]) -> float:
         dist = float(np.sum((_band_magnitude(embedder, cand_tokens, band) - target_band_mag) ** 2))

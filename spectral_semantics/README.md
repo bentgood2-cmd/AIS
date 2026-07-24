@@ -27,15 +27,15 @@ embedding model or LLM (see FEASIBILITY.md for why).
 PYTHONPATH=. pytest tests/ -v
 ```
 
-## Run the feasibility experiment
+## Run the feasibility experiments
 
 ```bash
-PYTHONPATH=. python3 experiments/run_feasibility_eval.py
+PYTHONPATH=. python3 experiments/run_feasibility_eval.py       # single sentences
+PYTHONPATH=. python3 experiments/run_paragraph_experiment.py   # paragraph-length text
 ```
 
-Writes `experiments/results/{summary,watermark_rows,persona_rows}.json`.
-First run also trains and caches a small local Word2Vec model (~5s) into
-`.cache/`.
+Writes `experiments/results/*.json`. First run also trains and caches a
+small local Word2Vec model (~5s) into `.cache/`.
 
 ## Layout
 
@@ -46,9 +46,16 @@ First run also trains and caches a small local Word2Vec model (~5s) into
 - `spectral_semantics/embeddings.py` — local Word2Vec backend (`Phi`).
 - `spectral_semantics/ngram_lm.py` — trigram fluency model.
 - `spectral_semantics/rewrite.py` — the "decoding" step: WordNet-synonym
-  beam search that tries to realize a spectral target in actual text.
+  beam search that tries to realize a spectral target in actual text, plus
+  an opt-in LM-proposed-candidate mode (`use_lm_candidates=True`) that
+  tests whether WordNet's narrowness was the real bottleneck.
 - `spectral_semantics/detector.py` — blind correlation detector, plus a
   permutation-test-based significance calibration the source paper lacks.
-- `experiments/run_feasibility_eval.py` — end-to-end measurement.
-- `tests/` — unit tests, including two that document real bugs/limitations
-  found while building this (Hermitian symmetry, false-positive rate).
+- `spectral_semantics/evaluation.py` — shared per-corpus evaluation logic
+  used by both experiment scripts, so sentence- and paragraph-scale runs
+  measure the exact same thing.
+- `experiments/run_feasibility_eval.py` / `run_paragraph_experiment.py` —
+  end-to-end measurement at two text-length scales.
+- `tests/` — unit tests, including several that document real bugs/
+  limitations found while building this (Hermitian symmetry, false-positive
+  rate, trigram-smoothing blindness to unseen-but-fluent phrasing).

@@ -275,6 +275,67 @@ lexical substitution structurally cannot span the distance to an arbitrary
 spectral target). That's the harder, second fix from the list below, and
 these numbers are the evidence that it's the one that actually matters.
 
+## Second follow-up: is WordNet specifically the bottleneck?
+
+The previous experiment pinned the blame on "single-word lexical
+substitution has a hard, per-word expressiveness ceiling." But that ceiling
+could be a property of *WordNet synonymy specifically* (true synonyms sit
+close together in embedding space by construction) rather than of
+word-level substitution in general. I tested this directly:
+`rewrite.lm_proposal_candidates` proposes substitution words by local
+two-sided trigram fluency across the **entire** vocabulary (14,104 words),
+not just WordNet's synset for the original word — so it's free to suggest
+words that are nowhere near the original in embedding space, as long as
+they'd read fluently in context. `guided_rewrite(..., use_lm_candidates=True)`
+searches over the union of both sources.
+
+Result, one example (`"the old man walked slowly across the quiet garden"`,
+urgent persona mask): band-restricted distance to the spectral target fell
+from 308.65 (WordNet-only) to 244.73 (WordNet+LM-proposed) — confirming
+WordNet's narrowness genuinely was costing real reachable distance. But the
+output was `"the president man told abandon across the still abandon"` —
+incoherent, with a word duplicated. Cranking the fluency penalty from 2x to
+20x changed nothing; the chosen words were identical every time.
+
+Digging into why revealed something more fundamental than "the fluency
+penalty needs retuning": I compared raw trigram statistics for the
+nonsensical substitution against a genuinely fluent one:
+
+| trigram | seen in training? | log-prob |
+|---|---|---|
+| `(the, old, man)` | yes, 5 times | −8.58 |
+| `(man, walked, slowly)` — grammatical, but not this *exact* trigram | no | −10.37 |
+| `(man, told, abandon)` — the nonsensical one | no | −10.37 |
+| `(still, abandon, </s>)` | no | −10.37 |
+
+**A perfectly grammatical trigram that simply doesn't appear verbatim in
+30,000 training sentences gets scored identically to a nonsensical one.**
+With a 32K-word vocabulary and Laplace smoothing, any unseen trigram's
+probability collapses to roughly `1/(context_count + V)` regardless of
+context — the model can only tell fluent from incoherent by exact
+memorization, not by generalizing ("walked" and "told abandon" are
+equally "unseen" to it, even though a human reader isn't confused by one
+and is by the other). Scaling the fluency weight can't fix this because
+the fluency signal itself carries almost no information once you're off
+the training data verbatim — there's nothing for a higher weight to
+amplify.
+
+This sharpens recommendation #1 in the "Bottom line" below: the missing
+piece isn't just "a bigger candidate space" (which `lm_proposal_candidates`
+proves helps) or "a bigger fluency weight" (which does nothing) — it's a
+model that can **generalize**, the way a neural LM's learned embeddings let
+it recognize "man walked slowly" as fine and "man told abandon" as broken
+even though neither exact trigram was memorized. I checked whether that was
+obtainable here: both `huggingface.co` and `download.pytorch.org` return
+`403` in this environment's network sandbox (only `pypi.org` /
+`files.pythonhosted.org` are reachable), so a pretrained model (GPT-2 or
+similar) can't be fetched. The remaining path — training a small neural LM
+from scratch on this same ~30K-sentence local corpus via a
+`pip install torch`-obtained CPU build — is a materially bigger effort
+with genuinely uncertain payoff (30K sentences is thin for a neural LM to
+learn much beyond what the n-gram counts already capture), and I stopped
+here rather than open-endedly pursue it without checking scope first.
+
 ## Bottom line
 
 If you want to build a real system out of this idea, the buildable,
@@ -285,15 +346,19 @@ watermarking (SemStamp, Kirchenbauer et al.)** — not "Active Inference"
 and not "eradicating autoregressive myopia." Concretely, to make the
 persona/watermark effect survive contact with real text, you'd need one of:
 
-1. **A real generative LM as the decoder**, sampling/searching over full
-   phrasings (not just single-word swaps) scored by embedding-distance +
-   LM likelihood — much larger search space, much more expressive, and
-   actually closer to what "Active Inference decoding" would need to mean
-   to work. **This is the one that matters most** — see the paragraph
-   experiment above: even a 12x increase in substitution budget left
-   persona differentiation essentially at zero, because single-word
-   synonym substitution has a hard, per-word expressiveness ceiling that
-   more text doesn't relax.
+1. **A real (neural, generalizing) LM as the decoder**, sampling/searching
+   over full phrasings scored by embedding-distance + LM likelihood — not
+   just a bigger candidate list. **This is the one that matters most**, and
+   two follow-up experiments narrow down exactly why: the paragraph
+   experiment showed a 12x increase in substitution budget left persona
+   differentiation at zero (a per-word expressiveness ceiling that more
+   text doesn't relax); the WordNet-vs-LM-proposal experiment then showed
+   that relaxing *which* words are eligible does help close the distance
+   gap, but our smoothed trigram model can't judge whether the result is
+   still coherent, because it can only recognize fluency it has seen
+   verbatim, not fluency it can generalize to. Both the candidate proposer
+   and the fluency judge need a model that generalizes — that's specifically
+   a neural LM, not just more data or more candidates fed to an n-gram one.
 2. **Longer units of text** (paragraphs/documents, not sentences) for the
    watermark — tested above, and it helps, but only partially (TPR ~3%
    → ~10%, still far from usable) and it does nothing for persona

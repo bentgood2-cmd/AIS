@@ -8,13 +8,13 @@ megabyte pretrained model. See FEASIBILITY.md for the tradeoff this implies.
 from __future__ import annotations
 
 import math
-from collections import Counter, defaultdict
+from collections import Counter
 from functools import lru_cache
 
 from .corpus import training_sentences
 
-_BOS = "<s>"
-_EOS = "</s>"
+BOS = "<s>"
+EOS = "</s>"
 
 
 class TrigramLM:
@@ -25,7 +25,7 @@ class TrigramLM:
         self.trigram: Counter = Counter()
         self.bigram_context: Counter = Counter()  # counts of (w1, w2) as context
         for sent in sentences:
-            padded = [_BOS, _BOS] + sent + [_EOS]
+            padded = [BOS, BOS] + sent + [EOS]
             self.vocab.update(sent)
             for w in padded:
                 self.unigram[w] += 1
@@ -44,7 +44,7 @@ class TrigramLM:
         return math.log(num / den)
 
     def sentence_logprob(self, tokens: list[str]) -> float:
-        padded = [_BOS, _BOS] + list(tokens) + [_EOS]
+        padded = [BOS, BOS] + list(tokens) + [EOS]
         total = 0.0
         for i in range(len(padded) - 2):
             total += self.trigram_logprob(padded[i], padded[i + 1], padded[i + 2])
