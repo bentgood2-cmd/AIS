@@ -97,6 +97,7 @@ def train_neural_lm(
     verbose: bool = True,
     sentences: list[list[str]] | None = None,
     save: bool = True,
+    save_path: str | None = None,
 ):
     import torch
     import torch.nn as nn
@@ -144,7 +145,8 @@ def train_neural_lm(
     if not save:
         return model, vocab
 
-    os.makedirs(_CACHE_DIR, exist_ok=True)
+    path = save_path or _MODEL_PATH
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     torch.save(
         dict(
             state_dict=model.state_dict(),
@@ -153,7 +155,7 @@ def train_neural_lm(
             emb_dim=emb_dim,
             hidden_dim=hidden_dim,
         ),
-        _MODEL_PATH,
+        path,
     )
     return model, vocab
 
@@ -207,15 +209,24 @@ class NeuralLM:
         return words[:top_k]
 
 
-@lru_cache(maxsize=1)
-def get_neural_lm() -> NeuralLM:
+def load_neural_lm(path: str) -> NeuralLM:
+    """Load a NeuralLM from an arbitrary checkpoint path (not cached) --
+    used to keep multiple trained variants around side by side, e.g. to
+    compare the 30k-sentence model against a full-corpus retrain without
+    overwriting the first one.
+    """
     import torch
 
-    if not os.path.exists(_MODEL_PATH):
-        model, vocab = train_neural_lm()
-        return NeuralLM(model, vocab)
-    ckpt = torch.load(_MODEL_PATH, weights_only=True)
+    ckpt = torch.load(path, weights_only=True)
     vocab = Vocab(word_to_id=ckpt["word_to_id"], id_to_word=ckpt["id_to_word"])
     model = _build_model(len(vocab), ckpt["emb_dim"], ckpt["hidden_dim"])
     model.load_state_dict(ckpt["state_dict"])
     return NeuralLM(model, vocab)
+
+
+@lru_cache(maxsize=1)
+def get_neural_lm() -> NeuralLM:
+    if not os.path.exists(_MODEL_PATH):
+        model, vocab = train_neural_lm()
+        return NeuralLM(model, vocab)
+    return load_neural_lm(_MODEL_PATH)
